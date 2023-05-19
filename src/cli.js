@@ -1,8 +1,7 @@
-import readlineSyns from "readline-sync";
+import readlineSyns from 'readline-sync';
 
 export const getName = () => {
-    const name = readlineSyns.question('May I have your name?: ');
+  const name = readlineSyns.question('May I have your name?: ');
 
-    console.log(`Hello, ${name}!`);
-}
-
+  console.log(`Hello, ${name}!`);
+};
