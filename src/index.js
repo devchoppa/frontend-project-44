@@ -1,29 +1,21 @@
-// import readlineSyns from 'readline-sync';
+import readlineSyns from 'readline-sync';
 
-// export const mainSource = (discription) => {
-// Приветсвие
-// console.log('Welcome to the Braing Games!');
-// const name = readlineSyns.question('May I have your name? ');
-// console.log(`Hello, ${name}!`);
-// console.log(discription);
+export const mainSource = (discription, gameRun) => {
+  console.log('Welcome to the Braing Games!');
+  const name = readlineSyns.question('May I have your name? ');
+  console.log(`Hello, ${name}!`);
+  console.log(discription);
 
-// Циклы вопросов
-// for (let i = 0; i < 3; i += 1){
-//     console.log(`Question: ${}`)
-// }
-// Ответы
-// const answer = readlineSyns.question('Answer: ');
+  for (let i = 0; i < 3; i += 1) {
+    const [question, correct] = gameRun();
+    console.log(`${question}`);
+    const answer = readlineSyns.question('Answer: ');
 
-// Завершение игры
-// console.log(`Congratulations, ${name}!`);
-
-// Сравнение
-// if (correct === answer) {
-//     console.log('Correct!');
-//   } else {
-//     return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correct}'.\n
-// Let's try again, ${name}!`);
-//   }
-// }
-// return console.log(`Congratulations, ${name}!`);
-// };
+    if (correct.toString() === answer) {
+      console.log('Correct!');
+    } else {
+      return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correct}'.\nLet's try again, ${name}!`);
+    }
+  }
+  return console.log(`Congratulations, ${name}!`);
+};
