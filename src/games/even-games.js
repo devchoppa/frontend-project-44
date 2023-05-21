@@ -1,6 +1,6 @@
 import { mainSource } from '../index.js';
 
-const discription = 'Answer "yes" if the number is even, otherwise answer "no".';
+const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 export const gameEven = () => {
   const randomNumber = Math.floor(Math.random() * 30) + 1;
@@ -10,4 +10,4 @@ export const gameEven = () => {
   return [question, correct];
 };
 
-mainSource(discription, gameEven);
+mainSource(description, gameEven);

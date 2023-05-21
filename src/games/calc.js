@@ -1,6 +1,6 @@
 import { mainSource } from '../index.js';
 
-const discription = 'What is the result of the expression?';
+const description = 'What is the result of the expression?';
 
 export const gameCalc = () => {
   const symbolsArr = ['+', '-', '*'];
@@ -27,4 +27,4 @@ export const gameCalc = () => {
   return [question, correct];
 };
 
-mainSource(discription, gameCalc);
+mainSource(description, gameCalc);
