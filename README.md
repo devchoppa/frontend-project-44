@@ -8,3 +8,6 @@
 
 ### Brain-Calculator
 [![asciicast](https://asciinema.org/a/51dytFeJtvPdvjPyWPbigbzj6.svg)](https://asciinema.org/a/51dytFeJtvPdvjPyWPbigbzj6)
+
+### Brain-Gcd
+[![asciicast](https://asciinema.org/a/KJUQQ98F49McYKBEBW3668DKv.svg)](https://asciinema.org/a/KJUQQ98F49McYKBEBW3668DKv)
