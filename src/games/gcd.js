@@ -4,7 +4,7 @@ const description = 'Find the greatest common divisor of given numbers.';
 
 export const gcdGame = () => {
   const randomNumberOne = Math.floor(Math.random() * 30) + 1;
-  const randomNumberTwo = Math.floor(Math.random() * 10) + 1;
+  const randomNumberTwo = Math.floor(Math.random() * 10) + 2;
 
   const question = `Question: ${randomNumberOne} ${randomNumberTwo}`;
 
