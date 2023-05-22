@@ -1,8 +1,8 @@
-import { mainSource } from '../index.js';
+import mainSource from '../index.js';
 
 const description = 'What number is missing in the progression?';
 
-export const progression = () => {
+const progression = () => {
   const randomNumber = Math.floor(Math.random() * 20) + 1;
   const randomProgression = Math.floor(Math.random() * 5) + 2;
   const randomMember = Math.floor(Math.random() * 9) + 1;
@@ -20,4 +20,6 @@ export const progression = () => {
   return [question, correct];
 };
 
-mainSource(description, progression);
+export default () => {
+  mainSource(description, progression);
+};
