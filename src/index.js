@@ -1,6 +1,6 @@
 import readlineSyns from 'readline-sync';
 
-export const mainSource = (description, gameRun) => {
+const mainSource = (description, gameRun) => {
   console.log('Welcome to the Braing Games!');
   const name = readlineSyns.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
@@ -19,3 +19,4 @@ export const mainSource = (description, gameRun) => {
   }
   return console.log(`Congratulations, ${name}!`);
 };
+export default mainSource;
