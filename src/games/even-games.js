@@ -1,8 +1,8 @@
-import { mainSource } from '../index.js';
+import mainSource from '../index.js';
 
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-export const gameEven = () => {
+const gameEven = () => {
   const randomNumber = Math.floor(Math.random() * 30) + 1;
   const question = (`Question: ${randomNumber}`);
   const correct = randomNumber % 2 === 0 ? 'yes' : 'no';
@@ -10,4 +10,6 @@ export const gameEven = () => {
   return [question, correct];
 };
 
-mainSource(description, gameEven);
+export default () => {
+  mainSource(description, gameEven);
+};
