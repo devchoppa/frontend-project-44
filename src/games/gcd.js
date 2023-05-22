@@ -1,4 +1,4 @@
-import { mainSource } from '../index.js';
+import mainSource from '../index.js';
 
 const description = 'Find the greatest common divisor of given numbers.';
 
@@ -9,7 +9,7 @@ const correctAnswerGcd = (numberOne, numberTwo) => {
   return correctAnswerGcd(numberTwo, numberOne % numberTwo);
 };
 
-export const gcdGame = () => {
+const gcdGame = () => {
   const randomNumberOne = Math.floor(Math.random() * 30) + 1;
   const randomNumberTwo = Math.floor(Math.random() * 10) + 2;
   const question = `Question: ${randomNumberOne} ${randomNumberTwo}`;
@@ -17,4 +17,6 @@ export const gcdGame = () => {
   return [question, correct];
 };
 
-mainSource(description, gcdGame);
+export default () => {
+  mainSource(description, gcdGame);
+};
