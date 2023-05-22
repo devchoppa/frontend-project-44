@@ -9,7 +9,7 @@ const isPrime = (number) => {
 };
 
 export const primeNumber = () => {
-  const randomNumber = Math.floor(Math.random() * 30) + 1;
+  const randomNumber = Math.floor(Math.random() * 100);
   const question = (`Question: ${randomNumber}`);
   const correct = isPrime(randomNumber) ? 'yes' : 'no';
   return [question, correct];
