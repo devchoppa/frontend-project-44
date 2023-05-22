@@ -8,12 +8,12 @@ export const gcdGame = () => {
 
   const question = `Question: ${randomNumberOne} ${randomNumberTwo}`;
 
-  function correctAnswerGcd(numberOne, numberTwo) {
+  const correctAnswerGcd = (numberOne, numberTwo) => {
     if (!numberTwo) {
       return numberOne;
     }
     return correctAnswerGcd(numberTwo, numberOne % numberTwo);
-  }
+  };
   const correct = correctAnswerGcd(randomNumberOne, randomNumberTwo);
   return [question, correct];
 };
