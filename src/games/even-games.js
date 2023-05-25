@@ -1,15 +1,15 @@
-import mainSource from '../index.js';
+import run from '../index.js';
 
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const gameEven = () => {
+const runEven = () => {
   const randomNumber = Math.floor(Math.random() * 30) + 1;
   const question = (`Question: ${randomNumber}`);
-  const correct = randomNumber % 2 === 0 ? 'yes' : 'no';
+  const correctAnswer = randomNumber % 2 === 0 ? 'yes' : 'no';
 
-  return [question, correct];
+  return [String(question), correctAnswer];
 };
 
 export default () => {
-  mainSource(description, gameEven);
+  run(description, runEven);
 };

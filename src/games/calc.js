@@ -1,32 +1,32 @@
-import mainSource from '../index.js';
+import run from '../index.js';
 
 const description = 'What is the result of the expression?';
 
-const gameCalc = () => {
+const runCalc = () => {
   const symbolsArr = ['+', '-', '*'];
   const randomNumberOne = Math.floor(Math.random() * 30) + 1;
   const randomNumberTwo = Math.floor(Math.random() * 10) + 1;
   const symbol = symbolsArr[Math.round(Math.random() * (symbolsArr.length - 1))];
   const question = `Question: ${randomNumberOne} ${symbol} ${randomNumberTwo}`;
-  let correct;
+  let correctAnswer;
 
   switch (symbol) {
     case '+':
-      correct = randomNumberOne + randomNumberTwo;
+      correctAnswer = randomNumberOne + randomNumberTwo;
       break;
     case '-':
-      correct = randomNumberOne - randomNumberTwo;
+      correctAnswer = randomNumberOne - randomNumberTwo;
       break;
     case '*':
-      correct = randomNumberOne * randomNumberTwo;
+      correctAnswer = randomNumberOne * randomNumberTwo;
       break;
     default:
-      correct = null;
+      correctAnswer = null;
       break;
   }
-  return [question, correct];
+  return [String(question), String(correctAnswer)];
 };
 
 export default () => {
-  mainSource(description, gameCalc);
+  run(description, runCalc);
 };

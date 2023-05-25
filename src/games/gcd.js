@@ -1,22 +1,22 @@
-import mainSource from '../index.js';
+import run from '../index.js';
 
 const description = 'Find the greatest common divisor of given numbers.';
 
-const correctAnswerGcd = (numberOne, numberTwo) => {
+const isCorrectAnswer = (numberOne, numberTwo) => {
   if (!numberTwo) {
     return numberOne;
   }
-  return correctAnswerGcd(numberTwo, numberOne % numberTwo);
+  return isCorrectAnswer(numberTwo, numberOne % numberTwo);
 };
 
-const gcdGame = () => {
+const runGcd = () => {
   const randomNumberOne = Math.floor(Math.random() * 30) + 1;
   const randomNumberTwo = Math.floor(Math.random() * 10) + 2;
   const question = `Question: ${randomNumberOne} ${randomNumberTwo}`;
-  const correct = correctAnswerGcd(randomNumberOne, randomNumberTwo);
-  return [question, correct];
+  const correctAnswer = isCorrectAnswer(randomNumberOne, randomNumberTwo);
+  return [String(question), String(correctAnswer)];
 };
 
 export default () => {
-  mainSource(description, gcdGame);
+  run(description, runGcd);
 };

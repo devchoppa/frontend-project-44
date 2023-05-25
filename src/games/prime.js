@@ -1,4 +1,4 @@
-import mainSource from '../index.js';
+import run from '../index.js';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
@@ -8,13 +8,13 @@ const isPrime = (number) => {
   return true;
 };
 
-const primeNumber = () => {
+const runPrime = () => {
   const randomNumber = Math.floor(Math.random() * 100);
   const question = (`Question: ${randomNumber}`);
-  const correct = isPrime(randomNumber) ? 'yes' : 'no';
-  return [question, correct];
+  const correctAnswer = isPrime(randomNumber) ? 'yes' : 'no';
+  return [String(question), correctAnswer];
 };
 
 export default () => {
-  mainSource(description, primeNumber);
+  run(description, runPrime);
 };
