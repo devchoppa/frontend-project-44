@@ -1,22 +1,24 @@
 import readlineSyns from 'readline-sync';
 
-const mainSource = (description, gameRun) => {
+const roundsCount = 3;
+const run = (description, getTask) => {
   console.log('Welcome to the Braing Games!');
-  const name = readlineSyns.question('May I have your name? ');
-  console.log(`Hello, ${name}!`);
+  const userName = readlineSyns.question('May I have your name? ');
+  console.log(`Hello, ${userName}!`);
   console.log(description);
 
-  for (let i = 0; i < 3; i += 1) {
-    const [question, correct] = gameRun();
+  for (let i = 0; i < roundsCount; i += 1) {
+    const [question, correctAnswer] = getTask();
     console.log(`${question}`);
-    const answer = readlineSyns.question('Answer: ');
+    const userAnswer = readlineSyns.question('Answer: ');
 
-    if (correct.toString() === answer) {
-      console.log('Correct!');
-    } else {
-      return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correct}'.\nLet's try again, ${name}!`);
+    if (correctAnswer !== userAnswer) {
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+      console.log(`Let's try again, ${userName}`);
+      return;
     }
+    console.log('Correct!');
   }
-  return console.log(`Congratulations, ${name}!`);
+  console.log(`Congratulations, ${userName}!`);
 };
-export default mainSource;
+export default run;
