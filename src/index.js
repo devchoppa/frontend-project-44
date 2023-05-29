@@ -9,7 +9,7 @@ const run = (description, getTask) => {
 
   for (let i = 0; i < roundsCount; i += 1) {
     const [question, correctAnswer] = getTask();
-    console.log(`${question}`);
+    console.log(`Question: ${question}`);
     const userAnswer = readlineSyns.question('Answer: ');
 
     if (correctAnswer !== userAnswer) {
