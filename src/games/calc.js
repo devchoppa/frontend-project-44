@@ -1,30 +1,29 @@
 import run from '../index.js';
+import { getRandomInt, getRandomIndex } from '../utils.js';
 
 const description = 'What is the result of the expression?';
+const operators = ['+', '-', '*'];
+
+const calculate = (x, y, operator) => {
+  switch (operator) {
+    case '+':
+      return x + y;
+    case '-':
+      return x - y;
+    case '*':
+      return x * y;
+    default:
+      throw new Error(`Unknown operator: '${operator}'!`);
+  }
+};
 
 const runCalc = () => {
-  const symbolsArr = ['+', '-', '*'];
-  const randomNumberOne = Math.floor(Math.random() * 30) + 1;
-  const randomNumberTwo = Math.floor(Math.random() * 10) + 1;
-  const symbol = symbolsArr[Math.round(Math.random() * (symbolsArr.length - 1))];
-  const question = `Question: ${randomNumberOne} ${symbol} ${randomNumberTwo}`;
-  let correctAnswer;
-
-  switch (symbol) {
-    case '+':
-      correctAnswer = randomNumberOne + randomNumberTwo;
-      break;
-    case '-':
-      correctAnswer = randomNumberOne - randomNumberTwo;
-      break;
-    case '*':
-      correctAnswer = randomNumberOne * randomNumberTwo;
-      break;
-    default:
-      correctAnswer = null;
-      break;
-  }
-  return [String(question), String(correctAnswer)];
+  const number1 = getRandomInt(1, 30);
+  const number2 = getRandomInt(1, 10);
+  const operator = operators[getRandomIndex(operators)];
+  const question = `${number1} ${operator} ${number2}`;
+  const correctAnswer = calculate(number1, number2, operator);
+  return [question, String(correctAnswer)];
 };
 
 export default () => {
