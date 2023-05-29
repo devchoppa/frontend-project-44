@@ -1,4 +1,5 @@
 import run from '../index.js';
+import { getRandomInt } from '../utils.js';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
@@ -9,10 +10,10 @@ const isPrime = (number) => {
 };
 
 const runPrime = () => {
-  const randomNumber = Math.floor(Math.random() * 100);
-  const question = (`Question: ${randomNumber}`);
-  const correctAnswer = isPrime(randomNumber) ? 'yes' : 'no';
-  return [String(question), correctAnswer];
+  const number = getRandomInt(0, 100);
+  const question = (`${number}`);
+  const correctAnswer = isPrime(number) ? 'yes' : 'no';
+  return [question, correctAnswer];
 };
 
 export default () => {
