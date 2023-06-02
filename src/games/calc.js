@@ -17,15 +17,17 @@ const calculate = (x, y, operator) => {
   }
 };
 
-const runCalc = () => {
+const getTask = () => {
   const number1 = getRandomInt(1, 30);
   const number2 = getRandomInt(1, 10);
   const operator = operators[getRandomIndex(operators)];
   const question = `${number1} ${operator} ${number2}`;
-  const correctAnswer = calculate(number1, number2, operator);
-  return [question, String(correctAnswer)];
+  const correctAnswer = calculate(number1, number2, operator).toString();
+  return [question, correctAnswer];
 };
 
-export default () => {
-  run(description, runCalc);
+const runCalc = () => {
+  run(description, getTask);
 };
+
+export default runCalc;
