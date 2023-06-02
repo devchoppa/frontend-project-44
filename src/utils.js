@@ -1,3 +1,3 @@
-const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min) + min);
-const getRandomIndex = (string) => Math.round(Math.random() * (string.length - 1));
+const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+const getRandomIndex = (collection) => Math.floor(Math.random() * (collection.length));
 export { getRandomInt, getRandomIndex };
