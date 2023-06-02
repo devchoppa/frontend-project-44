@@ -13,7 +13,7 @@ const createProgression = (length, start, step) => {
   return result;
 };
 
-const runProgression = () => {
+const getTask = () => {
   const start = getRandomInt(1, 30);
   const step = getRandomInt(5, 10);
   const progression = createProgression(lengthProgression, start, step);
@@ -25,6 +25,8 @@ const runProgression = () => {
   return [question, correctAnswer];
 };
 
-export default () => {
-  run(description, runProgression);
+const runProgression = () => {
+  run(description, getTask);
 };
+
+export default runProgression;
